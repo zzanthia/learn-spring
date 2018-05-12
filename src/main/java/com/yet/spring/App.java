@@ -17,13 +17,19 @@ public class App {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
         App app = (App) ctx.getBean("app");
 
-        app.logEvent("Some event for user 1");
-        app.logEvent("Some event for user 2");
+        app.logEvent((Event) ctx.getBean("event"), "Some event for user 1");
+        app.logEvent((Event) ctx.getBean("event"), "Some event for user 2");
     }
 
-    private void logEvent(String msg) {
+    private void logEvent(Event event, String msg) {
         String message = msg.replaceAll(client.getId(), client.getName());
-        eventLogger.logEvent(message);
+        event.setMsg(message);
+
+        logEvent(event);
+    }
+
+    private void logEvent(Event event) {
+        eventLogger.logEvent(event);
     }
 
 
