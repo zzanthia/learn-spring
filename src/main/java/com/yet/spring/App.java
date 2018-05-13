@@ -1,6 +1,6 @@
 package com.yet.spring;
 
-import org.springframework.context.ApplicationContext;
+import com.yet.spring.logger.EventLogger;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

@@ -1,5 +1,6 @@
-package com.yet.spring;
+package com.yet.spring.logger;
 
+import com.yet.spring.Event;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
