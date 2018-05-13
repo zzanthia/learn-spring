@@ -31,7 +31,7 @@ public class App {
     }
 
     private void logEvent(Event event, EventType eventType, String msg) {
-        String message = msg.replaceAll(client.getId(), client.getName()) + "(" + client.getGreeting() + ")";
+        String message = msg.replaceAll(client.getId(), client.getName() + "(" + client.getGreeting() + ")");
         event.setMsg(message);
 
         logEvent(event, eventType);
